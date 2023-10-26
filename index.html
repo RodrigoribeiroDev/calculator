@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        background-color: #333;
+      }
+        .container{
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            display: flex;
+           left: 38%;
+           width: 150px;
+           height: 150px;
+           top: 30%;
+           padding: 0;
+        }
+
+       
+.grid-container {
+  display: grid;
+  gap: 20px; 
+  justify-content: center; 
+  align-items: center; 
+  font-family: Arial, sans-serif;
+  font-size: 36px; 
+  margin: 1px;
+}
+
+
+#watch {
+  text-align: center; 
+  border: 2px solid #481010;
+  padding: 20px; 
+  border-radius: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  color: aliceblue;
+}
+
+button {
+   
+    padding: 10px 20px;
+    background-color: #791f17;
+    color: white;
+    font-size: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    margin: 5px;
+}
+
+.custom-button:hover {
+    background-color: #45a049;
+}
+
+.texto{
+  font-family:'Courier New', Courier, monospace ;
+  left: 35%;
+  position: absolute;
+}
+         
+    </style>
+</head>
+<body>
+    <div class="container">
+       <div><p id="watch">00:00:00</p> 
+    <button id="btn-start" onclick="init()">Iniciar</button>
+    <button id="btn-pause" onclick="pause()">Pausar</button>
+    <button id="btn-stop" onclick="reset()">Parar</button>
+    </div>
+</div>
+
+<div>
+  <h1 class="texto">Cronômetro simples!</h1>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
