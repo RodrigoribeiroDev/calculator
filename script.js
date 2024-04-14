@@ -1,50 +1,21 @@
-const watchDocument = document.getElementById('watch');
-
-let hours = 0;
-let minutes = 0;
-let seconds = 0;
-let interval;
-
-function init(){
-    watch();
-    interval = setInterval(watch, 1000)
+//Não precisa definir o parametro, cria uma variavel e concatena com o parametro
+function insert(nume){
+    var number = document.getElementById('result').innerHTML;
+    document.getElementById('result').innerHTML = number + nume
+}
+//chama o id e retorna uma string vazia
+function deletar(){
+    document.getElementById('result').innerHTML = "";
 }
 
-function pause(){
-    clearInterval(interval)
-    
+function back(){
+    var resultado = document.getElementById('result').innerHTML;
+    document.getElementById('result').innerHTML = resultado.substring(0, resultado.length - 1)
 }
 
-function reset(){
-    clearInterval(interval)
-    hours = 0;
-    seconds = 0;
-    minutes = 0;
-    watchDocument.innerHTML = "00:00:00"
-
- 
-}
-
-const digitZero = (digit) => {
-    if(digit < 10){
-        return `0${digit}`
-    } else{
-        return digit
+function calcular(){
+    var calcular = document.getElementById('result').innerHTML;
+    if(calcular){
+        document.getElementById('result').innerHTML = eval(calcular)
     }
 }
-
-
-function watch(){
-    seconds++;
-    
-    if(seconds === 60){
-        seconds = 0;
-        minutes++;
-        
-    } if(minutes === 60){
-        minutes = 0;
-        hours++;
-    }
-        watchDocument.innerHTML = digitZero(hours) + ":" + digitZero(minutes) + ":" + digitZero(seconds);
-}
-

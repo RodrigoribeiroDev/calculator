@@ -1,84 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-      body{
-        background-color: #333;
-      }
-        .container{
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            display: flex;
-           left: 38%;
-           width: 150px;
-           height: 150px;
-           top: 30%;
-           padding: 0;
-        }
-
-       
-.grid-container {
-  display: grid;
-  gap: 20px; 
-  justify-content: center; 
-  align-items: center; 
-  font-family: Arial, sans-serif;
-  font-size: 36px; 
-  margin: 1px;
-}
-
-
-#watch {
-  text-align: center; 
-  border: 2px solid #481010;
-  padding: 20px; 
-  border-radius: 10px;
-  font-family: 'Courier New', Courier, monospace;
-  color: aliceblue;
-}
-
-button {
-   
-    padding: 10px 20px;
-    background-color: #791f17;
-    color: white;
-    font-size: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    margin: 5px;
-}
-
-.custom-button:hover {
-    background-color: #45a049;
-}
-
-.texto{
-  font-family:'Courier New', Courier, monospace ;
-  left: 35%;
-  position: absolute;
-}
-         
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-       <div><p id="watch">00:00:00</p> 
-    <button id="btn-start" onclick="init()">Iniciar</button>
-    <button id="btn-pause" onclick="pause()">Pausar</button>
-    <button id="btn-stop" onclick="reset()">Parar</button>
-    </div>
-</div>
+  <h1>Calculadora</h1>
+  <div class="container">
+    <div id="result"></div>
+    <div>
+      <table>
+        <tr>
+          <td><button class="btn-delet" onclick="deletar()">C</button></td>
+          <td><button class="btn-back" onclick="back()"><</button></td>
 
-<div>
-  <h1 class="texto">Cronômetro simples!</h1>
-</div>
+          <td><button class="btn" onclick="insert('%')">%</button></td>
+          <td><button class="btn" onclick="insert('/')">/</button></td>
+        </tr>
+        <tr>
+          <td><button id="btnNum" onclick="insert('7')">7</button></td>
+          <td><button id="btnNum" onclick="insert('8')">8</button></td>
+          <td><button id="btnNum" onclick="insert('9')">9</button></td>
+          <td><button class="btn" onclick="insert('*')">x</button></td>
+        </tr>
+        <tr>
+          <td><button id="btnNum" onclick="insert('4')">4</button></td>
+          <td><button id="btnNum" onclick="insert('5')">5</button></td>
+          <td><button id="btnNum" onclick="insert('6')">6</button></td>
+          <td><button class="btn" onclick="insert('-')">-</button></td>
+        </tr>
+        <tr>
+          <td><button id="btnNum" onclick="insert('1')">1</button></td>
+          <td><button id="btnNum" onclick="insert('2')">2</button></td>
+          <td><button id="btnNum" onclick="insert('3')">3</button></td>
+          <td><button class="btn" onclick="insert('+')">+</button></td>
+          
+          <td rowspan="2"><button 
+            class="btn-result" 
+            onclick="calcular()">=</button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3"><button id="btnNum" onclick="insert('0')">0</button></td>
+          <td><button class="btn" onclick="insert('.')">.</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
 <script src="script.js"></script>
 </body>
 </html>
